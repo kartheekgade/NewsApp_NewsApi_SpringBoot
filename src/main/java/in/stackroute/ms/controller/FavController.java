@@ -51,7 +51,7 @@ public class FavController {
 		return new ResponseEntity<List<Favourites>>(articles, HttpStatus.OK);
 	}
 
-	@DeleteMapping("/")
+	@DeleteMapping("/favourites")
 	public ResponseEntity<?> emptyFav(@RequestHeader("Authorization") String authorizationHeader) {
 		ResponseEntity<String> response;
 		try {
