@@ -30,7 +30,7 @@ public class NewsService extends MappingJackson2HttpMessageConverter {
 	    private NewsService() {
 	    	setPrettyPrint(true);
 	    }  
-	    public static List<Example> sendRefinedUpdate() throws IOException {	
+	    public List<Example> sendRefinedUpdate() throws IOException {	
 	    	 
 	    	String urlString = "https://newsapi.org/v2/everything?q=tesla&from=2021-04-11&sortBy=publishedAt&apiKey=4f7aa805d4554730bdd04eae199d9519";
 

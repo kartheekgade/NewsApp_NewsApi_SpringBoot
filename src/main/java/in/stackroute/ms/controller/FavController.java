@@ -37,7 +37,7 @@ public class FavController {
 
 	
 	@PutMapping("/favourites/{id}")
-	public ResponseEntity<?> removeFromCart(@PathVariable String id,
+	public ResponseEntity<?> deleteFavourites(@PathVariable int id,
 			@RequestHeader("Authorization") String authorizationHeader) {
 		String username = getUsername(authorizationHeader);
 		return new ResponseEntity<Favourites>(service.deleteFav(username, id), HttpStatus.OK);
@@ -52,7 +52,7 @@ public class FavController {
 	}
 
 	@DeleteMapping("/")
-	public ResponseEntity<?> emptyCart(@RequestHeader("Authorization") String authorizationHeader) {
+	public ResponseEntity<?> emptyFav(@RequestHeader("Authorization") String authorizationHeader) {
 		ResponseEntity<String> response;
 		try {
 			String username = getUsername(authorizationHeader);

@@ -27,13 +27,13 @@ public class FavService {
 		return f;
 	}
 	
-	public Favourites deleteFav(String username,String id) {
+	public Favourites deleteFav(String username,int id) {
 		User user = userRepo.findByUsername(username);
 		List<Favourites> articles=new ArrayList<Favourites>(user.getFavourites());
 		Favourites fav=new Favourites();
 
 		for(Favourites favs: articles) {
-			if(favs.getId().equals(id)) {
+			if(favs.getFavoriteId()==id) {
 				fav=favs;
 				articles.remove(fav);
 				user.setFavourites(articles);
