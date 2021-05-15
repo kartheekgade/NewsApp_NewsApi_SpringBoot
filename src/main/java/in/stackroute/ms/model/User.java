@@ -16,7 +16,7 @@ public class User implements Comparable<User>{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long userId;
-	@Column(unique = true)
+	@Column(unique = true)        //this the error
 	private String username;
 	private String password;
 	@OneToMany(cascade=CascadeType.ALL)
@@ -71,4 +71,10 @@ public class User implements Comparable<User>{
 		return username.compareTo(otherUser.getUsername());
 	}
 
+	public User(Long userId, String username, String password) {
+		super();
+		this.userId = userId;
+		this.username = username;
+		this.password = password;
+	}
 }

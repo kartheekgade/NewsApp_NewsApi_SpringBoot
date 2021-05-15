@@ -22,6 +22,7 @@ public class Favourites {
 	
 	private String title;
 	
+	@Column(columnDefinition="TEXT")
 	private String description;
 
 	private String urlother;
@@ -30,6 +31,7 @@ public class Favourites {
 	
 	private String publishedAt;
 	
+	@Column(columnDefinition="TEXT")
 	private String content;
 
 	public int getFavoriteId() {

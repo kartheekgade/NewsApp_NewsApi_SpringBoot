@@ -18,8 +18,6 @@ import in.stackroute.ms.model.Example;
 @Service
 public class NewsService extends MappingJackson2HttpMessageConverter {
 	
-	public static int a=1;
-	
 
 	private static NewsService ourInstance = new NewsService();
 	
@@ -32,8 +30,9 @@ public class NewsService extends MappingJackson2HttpMessageConverter {
 	    }  
 	    public List<Example> sendRefinedUpdate() throws IOException {	
 	    	 
-	    	String urlString = "https://newsapi.org/v2/everything?q=tesla&from=2021-04-11&sortBy=publishedAt&apiKey=4f7aa805d4554730bdd04eae199d9519";
+	    	//String urlString = "https://newsapi.org/v2/everything?q=tesla&from=2021-04-13&sortBy=publishedAt&apiKey=4f7aa805d4554730bdd04eae199d9519";
 
+	    	String urlString ="https://newsapi.org/v2/everything?q=bitcoin&apiKey=47ed84b60465471aac9c85e4412d1974";
 	    	 RestTemplate restTemplate = new RestTemplate();
 	    	    String result = restTemplate.getForObject(urlString, String.class);	    	
 	    		    	  
@@ -119,12 +118,6 @@ public class NewsService extends MappingJackson2HttpMessageConverter {
 			            
 			            emp.setArticles(articles);
 			            
-			            if(a==1) {
-			            	System.out.println("hello"+emp.toString());	
-			            	
-			            }
-			            a++;
-
 			            //System.out.println("hello"+emp.toString());
 			            newsList.add(emp);
 						
